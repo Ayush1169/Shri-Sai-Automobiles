@@ -95,16 +95,30 @@ const Navbar = () => {
             {openThree && (
               <ul className="absolute top-8 left-0 bg-black bg-opacity-80 text-white w-40 rounded-md shadow-md">
                 <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-                  3 Wheeler Option 1
+                  <Link href="/safarsmart">Safar Smart</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-                  3 Wheeler Option 2
+                  <Link href="/safarsakti">Safar Sakti</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-                  3 Wheeler Option 3
+                  <Link href="/safarjumbo">Safar Jumbo</Link>
                 </li>
               </ul>
             )}
+          </li>
+
+          {/* Testimonials */}
+          <li>
+            <a href="#testimonial" className="hover:text-gray-500">
+              Testimonials
+            </a>
+          </li>
+
+          {/* Tied Up */}
+          <li>
+            <a href="#tiedup" className="hover:text-gray-500">
+              Tied Up
+            </a>
           </li>
 
           {/* Contact Us */}
@@ -180,12 +194,40 @@ const Navbar = () => {
             </button>
             {openThree && (
               <ul className="ml-4 mt-2 space-y-2 text-sm">
-                <li>3 Wheeler Option 1</li>
-                <li>3 Wheeler Option 2</li>
-                <li>3 Wheeler Option 3</li>
+                <li>
+                  <Link href="/safarsmart" onClick={() => setMobileMenuOpen(false)}>
+                    Safar Smart
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/another-three" onClick={() => setMobileMenuOpen(false)}>
+                    3 Wheeler Option 2
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/third-three" onClick={() => setMobileMenuOpen(false)}>
+                    3 Wheeler Option 3
+                  </Link>
+                </li>
               </ul>
             )}
           </div>
+
+          <a
+            href="#testimonial"
+            className="block hover:text-gray-400"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Testimonials
+          </a>
+
+          <a
+            href="#tiedup"
+            className="block hover:text-gray-400"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Tied Up
+          </a>
 
           <a
             href="#contact"
