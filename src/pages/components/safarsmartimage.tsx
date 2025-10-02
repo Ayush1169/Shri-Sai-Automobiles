@@ -6,6 +6,8 @@ import Image from "next/image";
 export default function HomePage() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showImages, setShowImages] = useState(false); // for explore more toggle
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // for modal
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -137,6 +139,62 @@ export default function HomePage() {
           />
         </div>
       </div>
+
+      {/* Explore More Button */}
+      <div className="text-center mt-12">
+        <button
+          onClick={() => setShowImages(!showImages)}
+          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition"
+        >
+          {showImages ? "Hide" : "Explore More"}
+        </button>
+      </div>
+
+      {/* SECOND PAGE - 6 Images Grid */}
+      {showImages && (
+        <div className="mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "/safarsmart/WhatsApp Image 2025-09-30 at 11.26.48_4f06e95f.jpg",
+              "/safarsmart/WhatsApp Image 2025-09-30 at 11.26.31_716c710b.jpg",
+              "/safarsmart/WhatsApp Image 2025-09-30 at 11.26.16_aba4a23a.jpg",
+              "/safarsmart/IMG-20250930-WA0005.jpg",
+              "/safarsmart/IMG-20250930-WA0004.jpg",
+              "/safarsmart/IMG-20250930-WA0002.jpg",
+            ].map((src, idx) => (
+              <div
+                key={idx}
+                className="relative overflow-hidden rounded-md cursor-pointer group"
+                onClick={() => setSelectedImage(src)}
+              >
+                <Image
+                  src={src}
+                  alt={`Image ${idx + 1}`}
+                  width={400}
+                  height={250}
+                  className="object-cover w-full h-[250px] transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <Image
+            src={selectedImage}
+            alt="Full View"
+            width={1000}
+            height={600}
+            className="object-contain max-h-[90vh] max-w-[90vw] rounded-md"
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -19,6 +19,11 @@ export default function TiedUpSection() {
       alt: "SES Electric",
       link: "https://www.seselectric.in/",
     },
+      {
+      src: "/Logo/new -kinetic-logo-black.png", // ✅ renamed
+      alt: "Kinetic",
+      link: "https://www.kineticgreen.com/",
+    },
   ];
 
   return (

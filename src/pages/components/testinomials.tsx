@@ -4,35 +4,49 @@ import React, { useState } from "react";
 const testimonials = [
   {
     id: 1,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "John Doe",
+    text: "I bought this vehicle because it felt special, I was attracted to the features it provided. vehicle runs great.",
+    name: "KIRTI LAL SAHU",
+    vehicle: "safar smart limited edition",
   },
   {
     id: 2,
-    text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "Jane Smith",
+    text: "Vehicle is very spacious and is very comfortable",
+    name: "Ramlal Sao",
+    vehicle: "safar smart",
   },
   {
     id: 3,
-    text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    name: "Alice Johnson",
+    text: "Helps me save money, vehicle charges quickly, and is super solid and stable",
+    name: "Ravi Narayan Gupta",
+    vehicle: "safar smart",
+  },
+  {
+    id: 4,
+    text: "Been using this vehicle for 4+ years, still delivers 80+ kms of range. Saved a lot of money compared to petrol vehicle",
+    name: "Damru Sahu",
+    vehicle: "safar smart",
   },
 ];
 
 const TestimonialSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
 
   const prevSlide = () => {
+    setDirection("left");
     setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
+    setDirection("right");
     setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <section id="testimonial"
-     className="w-full py-12 bg-[#f5f5f5] font-[Plus_Jakarta_Sans]">
+    <section
+      id="testimonial"
+      className="w-full py-12 bg-[#f5f5f5] font-[Plus_Jakarta_Sans]"
+    >
       {/* Heading */}
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#6cbc8c]">
@@ -61,11 +75,18 @@ const TestimonialSection: React.FC = () => {
               <div
                 key={item.id}
                 className={`${
-                  isActive ? "scale-105 opacity-100" : "scale-90 opacity-70"
-                } bg-[#6cbc8c] rounded-xl p-6 w-[280px] md:w-[320px] text-center text-white transition-all duration-500`}
+                  isActive ? "scale-105 opacity-100" : "scale-90 opacity-50"
+                } bg-[#6cbc8c] rounded-xl p-6 w-[280px] md:w-[320px] text-center text-black transition-all duration-500 transform ${
+                  isActive
+                    ? direction === "right"
+                      ? "animate-slideInRight"
+                      : "animate-slideInLeft"
+                    : ""
+                }`}
               >
                 <p className="text-sm md:text-base italic mb-4">“{item.text}”</p>
                 <h4 className="font-bold">{item.name}</h4>
+                <p className="text-xs mt-2">{item.vehicle}</p>
               </div>
             );
           })}
@@ -91,9 +112,16 @@ const TestimonialSection: React.FC = () => {
         </button>
 
         {/* Single Card */}
-        <div className="bg-[#6cbc8c] rounded-xl p-6 w-[260px] text-center text-white transition-all duration-500">
+        <div
+          className={`bg-[#6cbc8c] rounded-xl p-6 w-[260px] text-center text-black transition-all duration-500 transform ${
+            direction === "right"
+              ? "animate-slideInRight"
+              : "animate-slideInLeft"
+          }`}
+        >
           <p className="text-sm italic mb-4">“{testimonials[current].text}”</p>
           <h4 className="font-bold">{testimonials[current].name}</h4>
+          <p className="text-xs mt-2">{testimonials[current].vehicle}</p>
         </div>
 
         {/* Right Arrow */}
@@ -110,7 +138,10 @@ const TestimonialSection: React.FC = () => {
         {testimonials.map((_, index) => (
           <span
             key={index}
-            onClick={() => setCurrent(index)}
+            onClick={() => {
+              setDirection(index > current ? "right" : "left");
+              setCurrent(index);
+            }}
             className={`w-3 h-3 rounded-full cursor-pointer ${
               current === index ? "bg-[#6cbc8c]" : "bg-gray-300"
             }`}

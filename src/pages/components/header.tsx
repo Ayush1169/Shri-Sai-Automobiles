@@ -57,9 +57,7 @@ const Header = () => {
           alt={`Slide ${currentIndex}`}
           fill
           priority
-          className={`transition-all duration-700 ${
-            isMobile ? "object-contain bg-white" : "object-cover"
-          }`}
+          className={`transition-all duration-700 object-cover`}
         />
       </div>
 

@@ -62,32 +62,41 @@ const Header: React.FC = () => {
 
       {/* Overlay Text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        {/* Title */}
         <h1
-          className="font-bold text-white mt-[-150px]"
+          className={`font-bold mt-[-150px] md:mt-[-150px] ${
+            isMobile ? "mt-[50px] text-black" : "text-white"
+          } whitespace-nowrap`}
           style={{
-            fontSize: "54px",
+            fontSize: isMobile ? "32px" : "54px",
             fontFamily: '"Plus Jakarta Sans", sans-serif',
-            lineHeight: "68px",
+            lineHeight: isMobile ? "40px" : "68px",
           }}
         >
-          Safar Smart
+          Safar Sakti
         </h1>
 
         {/* Specs */}
-        <div className="mt-auto mb-20 flex flex-wrap justify-center gap-10">
+        <div
+          className={`mt-auto mb-20 ${
+            isMobile
+              ? "grid grid-cols-2 gap-6 text-black"
+              : "flex flex-wrap justify-center gap-10 text-white"
+          }`}
+        >
           <div>
             <p
-              className="font-semibold text-white"
-              style={{ fontSize: "27px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+              className="font-semibold"
+              style={{ fontSize: "22px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               120 Kms*
             </p>
             <p
               className="mt-1"
               style={{
-                fontSize: "15px",
+                fontSize: "14px",
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
-                color: "#ffffff99",
+                color: isMobile ? "#00000099" : "#ffffff99",
               }}
             >
               Range
@@ -96,17 +105,17 @@ const Header: React.FC = () => {
 
           <div>
             <p
-              className="font-semibold text-white"
-              style={{ fontSize: "27px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+              className="font-semibold"
+              style={{ fontSize: "22px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Lithium Ion
             </p>
             <p
               className="mt-1"
               style={{
-                fontSize: "15px",
+                fontSize: "14px",
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
-                color: "#ffffff99",
+                color: isMobile ? "#00000099" : "#ffffff99",
               }}
             >
               Battery type
@@ -115,17 +124,17 @@ const Header: React.FC = () => {
 
           <div>
             <p
-              className="font-semibold text-white"
-              style={{ fontSize: "27px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+              className="font-semibold"
+              style={{ fontSize: "22px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               5 KWH - LFP Battery
             </p>
             <p
               className="mt-1"
               style={{
-                fontSize: "15px",
+                fontSize: "14px",
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
-                color: "#ffffff99",
+                color: isMobile ? "#00000099" : "#ffffff99",
               }}
             >
               Battery Capacity
@@ -134,17 +143,17 @@ const Header: React.FC = () => {
 
           <div>
             <p
-              className="font-semibold text-white"
-              style={{ fontSize: "27px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+              className="font-semibold"
+              style={{ fontSize: "22px", fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               4.5 hours*
             </p>
             <p
               className="mt-1"
               style={{
-                fontSize: "15px",
+                fontSize: "14px",
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
-                color: "#ffffff99",
+                color: isMobile ? "#00000099" : "#ffffff99",
               }}
             >
               Charging time

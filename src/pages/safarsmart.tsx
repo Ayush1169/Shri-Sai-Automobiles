@@ -3,6 +3,7 @@ import Navbar from "../pages/components/navbar"
 import Footer from "../pages/components/footer"
 import SafarSlider from "../pages/components/safarsmatslider"
 import SafarImage from "../pages/components/safarsmartimage"
+import SafarVideo from "../pages/components/safarsmartvideo"
 
 
 const BgaussPage = () => {
@@ -10,6 +11,7 @@ const BgaussPage = () => {
     <>
       <Navbar />
       <main>
+        <SafarVideo />
         <SafarSlider />      
         <SafarImage />  
       </main>

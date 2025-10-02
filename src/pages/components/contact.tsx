@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 
 const ContactUs: React.FC = () => {
@@ -61,33 +60,58 @@ const ContactUs: React.FC = () => {
         {/* Right Form */}
         <div className="flex-1 w-full">
           <h2 className="font-bold text-lg mb-4">Get In Touch</h2>
-          <form className="flex flex-col gap-4">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="flex flex-col gap-4"
+          >
+            {/* Hidden Access Key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="bd867502-80e6-4344-8d12-c38e491b281e"
+            />
+            {/* Hidden Email (receiver) */}
+            <input
+              type="hidden"
+              name="to"
+              value="shrisaiautomobilekg@gmail.com"
+            />
+
             <input
               type="text"
+              name="name"
               placeholder="Name"
+              required
               className="w-full p-3 border border-gray-300"
               style={{ backgroundColor: "#fafafa", color: "#000000" }}
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
+              required
               className="w-full p-3 border border-gray-300"
               style={{ backgroundColor: "#fafafa", color: "#000000" }}
             />
             <input
               type="text"
+              name="phone"
               placeholder="Phone"
               className="w-full p-3 border border-gray-300"
               style={{ backgroundColor: "#fafafa", color: "#000000" }}
             />
             <input
               type="text"
+              name="subject"
               placeholder="Subject"
               className="w-full p-3 border border-gray-300"
               style={{ backgroundColor: "#fafafa", color: "#000000" }}
             />
             <textarea
+              name="message"
               placeholder="Message"
+              required
               className="w-full p-3 border border-gray-300 h-32"
               style={{ backgroundColor: "#fafafa", color: "#000000" }}
             ></textarea>
