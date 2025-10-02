@@ -40,21 +40,35 @@ const ContactUs: React.FC = () => {
           }}
         >
           <h2 className="font-bold text-lg mb-4">Our Full Info</h2>
+          
           <p className="font-semibold">Phone number</p>
-          <p className="mb-4">(+91) 9109537663</p>
+          <p className="mb-4">
+            <a href="tel:+919993519805" className="hover:underline text-black">
+              (+91) 9993519805
+            </a>
+          </p>
 
           <p className="font-semibold">Email address</p>
-          <p className="mb-4">info@dronenestllp.in</p>
+          <p className="mb-4">
+            <a href="mailto:shrisaiautomobilek@gmail.com" className="hover:underline text-black">
+              shrisaiautomobilek@gmail.com
+            </a>
+          </p>
 
           <p className="font-semibold">Address info</p>
           <p className="mb-4">
-            VCH7+JX2, Mini Stadium Road, Raigarh, Chhattisgarh, India – 496001
+            <a
+              href="https://www.google.com/maps?q=VCH7+JX2,+Mini+Stadium+Road,+Raigarh,+Chhattisgarh,+India+–+496001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-black"
+            >
+              VCH7+JX2, Mini Stadium Road, Raigarh, Chhattisgarh, India – 496001
+            </a>
           </p>
 
           <p className="font-semibold">Opening Hours</p>
-          <p>Mon-Fri: 9 am – 6 pm</p>
-          <p>Saturday: 9 am – 4 pm</p>
-          <p>Sunday: Closed</p>
+          <p>Mon-sun: 9 am – 6 pm</p>
         </div>
 
         {/* Right Form */}

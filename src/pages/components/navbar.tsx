@@ -130,7 +130,7 @@ const Navbar = () => {
 
           {/* About Us */}
           <li>
-            <a href="#about" className="hover:text-gray-500">
+            <a href="#aboutus" className="hover:text-gray-500">
               About Us
             </a>
           </li>

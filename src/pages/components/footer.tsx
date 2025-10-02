@@ -20,10 +20,10 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-[16px]">Company</h3>
             <ul className="mt-2 space-y-1 text-[#000000b3]">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="/#aboutus">About Us</a></li>
+              <li><a href="/#contact">Contact Us</a></li>
+              <li><a href="/privacypolicy">Privacy Policy</a></li>
+              <li><a href="/terms&condition">Terms and Conditions</a></li>
             </ul>
           </div>
 
@@ -31,8 +31,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-[16px]">Scooters</h3>
             <ul className="mt-2 space-y-1 text-[#000000b3]">
-              <li><a href="#">E-Zulu</a></li>
-              <li><a href="#">Zing</a></li>
+              <li><a href="/bgauss">Bgauss</a></li>
+              <li><a href="/https://zelioebikes.com/dealer-locator/">Zelio</a></li>
+              <li><a href="/ses">Shema electric</a></li>
             </ul>
           </div>
 
@@ -40,10 +41,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-[16px]">3 Wheelers</h3>
             <ul className="mt-2 space-y-1 text-[#000000b3]">
-              <li><a href="#">Safar Smart</a></li>
-              <li><a href="#">Super DXX</a></li>
-              <li><a href="#">Safar Shakti</a></li>
-              <li><a href="#">Safar Jumbo Ranger</a></li>
+              <li><a href="/safarsmart">Safar Smart</a></li>
+              <li><a href="/safarsakti">Safar Shakti</a></li>
+              <li><a href="/safarjumbo">Safar Jumbo Ranger</a></li>
             </ul>
           </div>
 
@@ -51,16 +51,14 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-[16px]">Contact</h3>
             <ul className="mt-2 space-y-1 text-[#000000b3] text-sm">
-              <li>Kinetic Green Energy & Power</li>
-              <li>Solutions Ltd. D-1 Block,</li>
-              <li>Plot No.18/2, Chinchwad,</li>
-              <li>Pune - 411019, Maharashtra, INDIA</li>
+              <li>VCH7+JX2, Mini Stadium Road, Raigarh, Chhattisgarh, India – 496001</li>
+             
               <li className="mt-2 font-semibold text-[#000000]">
-                1800-120-4242
+                99993519805
               </li>
               <li>
-                <a href="mailto:hello@kineticgreen.com">
-                  hello@kineticgreen.com
+                <a href="mailto:shrisaiautomobilekg@gmail.com">
+                  shrisaiautomobilekg@gmail.com
                 </a>
               </li>
             </ul>
@@ -97,7 +95,7 @@ const Footer = () => {
             </a>
 
             {/* Instagram Icon */}
-            <a href="#">
+            <a href="https://www.instagram.com/shri_sai_automobile_rgh?igsh=b2FndXJxdmNqdTI3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

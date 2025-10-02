@@ -6,6 +6,7 @@ import Faq from "../pages/components/faqsection"
 import Testinomials from "../pages/components/testinomials" 
 import TiedUp from "../pages/components/tiedup"  
 import Footer from "../pages/components/footer"
+import AboutUs from "./components/aboutus"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
        <Contact />  
       <Testinomials />
       <TiedUp />
+      <AboutUs />
        <Faq />
       </main>
       <Footer />

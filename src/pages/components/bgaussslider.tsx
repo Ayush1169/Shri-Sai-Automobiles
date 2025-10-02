@@ -1,6 +1,7 @@
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Image from "next/image"
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
 
 const slides = [
   {
@@ -32,15 +33,16 @@ const slides = [
 const BgaussSlider = () => {
   const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 4000) // 4 sec auto slide
-    return () => clearInterval(interval)
-  }, [])
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#eaffea] transition-all duration-700 px-4 py-8">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#eaffea] transition-all duration-700 px-4 py-8 relative">
       {/* Top Heading */}
       <h2
         style={{
@@ -56,7 +58,7 @@ const BgaussSlider = () => {
       </h2>
 
       {/* Main Content */}
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-12">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-12 relative">
         {/* Left Text Section */}
         <div className="text-center lg:text-left">
           <h1
@@ -87,7 +89,7 @@ const BgaussSlider = () => {
         </div>
 
         {/* Right Image Section */}
-        <div className="flex justify-center">
+        <div className="flex justify-center relative">
           <Image
             src={slides[current].img}
             alt={`Slide ${current + 1}`}
@@ -96,6 +98,22 @@ const BgaussSlider = () => {
             className="object-contain transition-opacity duration-700 w-full max-w-[500px] lg:max-w-[724px]"
             priority
           />
+
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-[-40px] top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200"
+          >
+            <ArrowLeftIcon className="w-6 h-6 text-gray-700" />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-[-40px] top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200"
+          >
+            <ArrowRightIcon className="w-6 h-6 text-gray-700" />
+          </button>
         </div>
       </div>
     </div>

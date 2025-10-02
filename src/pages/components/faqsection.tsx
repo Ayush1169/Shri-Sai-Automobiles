@@ -72,12 +72,6 @@ const FaqSection = () => {
             )}
           </div>
         ))}
-
-        <button
-          className="mt-[20px] bg-[#34b714] text-[#ffffff] text-base font-['Plus_Jakarta_Sans',_sans-serif] px-[6px] py-[1px] rounded"
-        >
-          VIEW MORE
-        </button>
       </div>
     </div>
   );

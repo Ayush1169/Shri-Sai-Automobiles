@@ -1,6 +1,7 @@
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const slides = [
   {
@@ -44,15 +45,16 @@ const slides = [
 const BgaussSlider = () => {
   const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 4000) // 4 sec auto slide
-    return () => clearInterval(interval)
-  }, [])
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#ffffff] transition-all duration-700 px-4 py-8">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#ffffff] transition-all duration-700 px-4 py-8 relative">
       {/* Top Heading */}
       <h2
         style={{
@@ -94,7 +96,7 @@ const BgaussSlider = () => {
         </div>
 
         {/* Right Image Section */}
-        <div className="flex justify-center">
+        <div className="flex justify-center relative">
           <Image
             src={slides[current].img}
             alt={`Slide ${current + 1}`}
@@ -103,6 +105,22 @@ const BgaussSlider = () => {
             className="object-contain transition-opacity duration-700 w-full max-w-[450px] md:max-w-[600px] lg:max-w-[724px]"
             priority
           />
+
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 hover:bg-gray-100"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-2 hover:bg-gray-100"
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
       </div>
     </div>
