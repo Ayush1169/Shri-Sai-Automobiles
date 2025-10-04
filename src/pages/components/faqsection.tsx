@@ -36,7 +36,7 @@ const FaqSection = () => {
 
         {/* Green Background with Image */}
         <div
-          className="w-[340px] h-[317px] bg-[#34b714] relative overflow-hidden flex items-end justify-center"
+          className="w-[340px] h-[317px] bg-[#66ae30] relative overflow-hidden flex items-end justify-center"
         >
           <Image
             src="/images/faq.png"

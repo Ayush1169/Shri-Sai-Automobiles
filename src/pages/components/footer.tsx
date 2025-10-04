@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-white text-[#000000] font-['Plus Jakarta Sans',sans-serif]">
       {/* Green Header */}
       <div
-        className="bg-[#34b714] text-white text-center py-[33px] px-[30px]"
+        className="bg-[#66ae30] text-white text-center py-[33px] px-[30px]"
         style={{ fontWeight: "600", fontSize: "18px" }}
       >
         Stay connected with us!
@@ -32,7 +32,16 @@ const Footer = () => {
             <h3 className="font-bold text-[16px]">Scooters</h3>
             <ul className="mt-2 space-y-1 text-[#000000b3]">
               <li><a href="/bgauss">Bgauss</a></li>
-              <li><a href="/https://zelioebikes.com/dealer-locator/">Zelio</a></li>
+              <li>
+  <a
+    href="https://zelioebikes.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Zelio
+  </a>
+</li>
+
               <li><a href="/ses">Shema electric</a></li>
             </ul>
           </div>

@@ -113,6 +113,7 @@ const TestimonialSection: React.FC = () => {
 
         {/* Single Card */}
         <div
+          key={testimonials[current].id}
           className={`bg-[#6cbc8c] rounded-xl p-6 w-[260px] text-center text-black transition-all duration-500 transform ${
             direction === "right"
               ? "animate-slideInRight"
